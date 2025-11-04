@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Importer le projet
-        run: checkout@v4
+        uses: action/checkout@v4
 
       - name: Build Docker image
         run: |
