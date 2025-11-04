@@ -14,7 +14,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t devsecure-api .
-          docker run -p 3000:3000 devsecure-api
+          docker run -p 3000:3000 devsecure-api &
 
       - name: 2e étape
         run: echo "suite"
