@@ -16,8 +16,13 @@ jobs:
           docker build -t devsecure-api .
           docker run -p 3000:3000 devsecure-api &
 
-      - name: 2e étape
-        run: echo "suite"
+      - name: Trivy (Scan des vulnérabilités dans l'image Docker)
+        uses: aquasecurity/trivy-action@master
+        with:
+            image-ref: devsecure-api
+            format: table
+            vuln-type: 'os,library'
+            severity: 'CRITICAL,HIGH'
 
       - name: encore
         run: echo "encore suite"
