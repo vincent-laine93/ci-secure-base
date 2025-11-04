@@ -24,5 +24,9 @@ jobs:
             vuln-type: 'os,library'
             severity: 'CRITICAL,HIGH'
 
-      - name: encore
-        run: echo "encore suite"
+      - name: Snyk (Analyse des dépendances Python et du container)
+        uses: snyk/actions/python@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
