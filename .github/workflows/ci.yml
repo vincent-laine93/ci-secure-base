@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Importer le projet
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
