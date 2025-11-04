@@ -1,4 +1,4 @@
-name: Secrets et Variables
+name: Verification Security and Build
 
 on: push
 
@@ -6,6 +6,9 @@ jobs:
   verification-securite:
     runs-on: ubuntu-latest
     steps:
+      - name: Importer le projet
+        run: checkout@v4
+
       - name: Build Docker image
         run: |
           docker build -t devsecure-api .
