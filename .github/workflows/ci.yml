@@ -1,0 +1,19 @@
+name: Secrets et Variables
+
+on: push
+
+jobs:
+  verification-securite:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build Docker image
+        run: |
+          docker build -t devsecure-api .
+          docker run -p 3000:3000 devsecure-api
+
+      - name: 2e étape
+        run: echo "suite"
+
+      - name: encore
+        run: echo "encore suite"
