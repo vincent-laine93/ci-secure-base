@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Importer le projet
         uses: action/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Build Docker image
         run: |
